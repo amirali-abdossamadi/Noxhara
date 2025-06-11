@@ -1,16 +1,14 @@
 <?php
 // Enqueue styles and scripts
 function noxhara_enqueue_scripts() {
-    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css' );
-    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true );
+    // Main theme stylesheet
+    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri(), array(), '1.0.0' );
+    // Custom stylesheet
+    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0' );
+    // Custom JavaScript (depends on jQuery)
+    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'noxhara_enqueue_scripts' );
-
-// Include custom function files
-require get_template_directory() . '/inc/custom-functions.php';
-require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/theme-hooks.php';
 
 // Theme setup
 function noxhara_setup() {
@@ -22,3 +20,8 @@ function noxhara_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'noxhara_setup' );
+
+// Include custom function files
+require get_template_directory() . '/inc/custom-functions.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/theme-hooks.php';

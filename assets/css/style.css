@@ -2,8 +2,43 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #000; /* Black background for galactic effect */
+    color: #fff; /* White text for contrast */
+    overflow-x: hidden;
 }
+
+#galaxy-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure canvas stays behind content */
+    display: block;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 10; /* High z-index to stay above canvas */
+}
+
+/* Ensure header and nav are visible */
+header, nav {
+    position: relative;
+    z-index: 10;
+}
+
+/* Fallback static stars for non-JS users */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="10" cy="10" r="1" fill="white" opacity="0.5"/><circle cx="50" cy="50" r="1.5" fill="white" opacity="0.7"/><circle cx="90" cy="90" r="1" fill="white" opacity="0.4"/></svg>') repeat;
+    opacity: 0.2;
+    z-index: -1;
 }
