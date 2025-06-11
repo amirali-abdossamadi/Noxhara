@@ -61,15 +61,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Header scroll animation
     const header = document.getElementById('main-header');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 50) {
-            header.classList.add('scrolled');
-        } else if (scrollTop <= 50) {
-            header.classList.remove('scrolled');
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+    if (header) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else if (scrollTop <= 50) {
+                header.classList.remove('scrolled');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    } else {
+        console.error('Header element not found');
+    }
 });
