@@ -4,7 +4,7 @@ Noxhara is a modern, minimal, and highly customizable WordPress theme built for 
 
 ---
 ## 📁 Directory Structure
-‍‍‍‍‍‍```
+‍‍‍‍‍‍```yaml
     noxhara/
     ├── assets/                      # Static files (CSS, JS, images, fonts)
     │   ├── css/
@@ -74,12 +74,11 @@ Noxhara is a modern, minimal, and highly customizable WordPress theme built for 
 ```bash
 cd wp-content/themes/
 git clone https://github.com/amirali-abdossamadi/Noxhara.git
-````
 
 2. Log in to your WordPress admin panel
 3. Go to **Appearance → Themes**
 4. Activate **Noxhara**
-
+```
 ---
 
 ## 🛠️ Development Notes
