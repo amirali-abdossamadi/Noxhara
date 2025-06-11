@@ -59,10 +59,26 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Canvas not supported or element not found');
     }
 
-    // Header scroll animation
+    // Header scroll and admin bar handling
     const header = document.getElementById('main-header');
     if (header) {
+        const adminBar = document.getElementById('wpadminbar');
         let lastScrollTop = 0;
+
+        // Adjust header top offset for admin bar
+        function adjustHeaderOffset() {
+            if (adminBar) {
+                const adminBarHeight = adminBar.offsetHeight;
+                header.style.top = `${adminBarHeight}px`;
+            } else {
+                header.style.top = '0';
+            }
+        }
+
+        adjustHeaderOffset();
+        window.addEventListener('resize', adjustHeaderOffset);
+
+        // Scroll animation
         window.addEventListener('scroll', () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop && scrollTop > 50) {

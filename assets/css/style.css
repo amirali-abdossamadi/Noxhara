@@ -1,11 +1,11 @@
 body {
-    font-family: 'Vazir', Arial, sans-serif; /* Persian font */
+    font-family: 'Vazir', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #000;
     color: #fff;
     overflow-x: hidden;
-    direction: rtl; /* RTL for Persian */
+    direction: rtl;
 }
 
 #galaxy-canvas {
@@ -38,17 +38,31 @@ body::before {
     z-index: -1;
 }
 
+/* WP Admin Bar */
+#wpadminbar {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
 /* Header Styles */
 .transparent-header {
     position: sticky;
-    top: 0;
+    top: 0; /* Adjusted dynamically in JS for admin bar */
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: none;
     z-index: 100;
     transition: all 0.3s ease;
     padding: 20px 0;
+}
+
+.admin-bar .transparent-header {
+    top: 32px; /* Default admin bar height */
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .transparent-header {
+        top: 46px; /* Admin bar height on smaller screens */
+    }
 }
 
 .header-container {
@@ -65,8 +79,14 @@ body::before {
 }
 
 .logo-img {
-    height: 50px;
-    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.site-title {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
 }
 
 #primary-nav {
@@ -143,10 +163,6 @@ body::before {
 }
 
 /* RTL Adjustments */
-html[lang="fa-IR"] body {
-    direction: rtl;
-}
-
-html[lang="fa-IR"] #primary-nav ul {
+html[lang="fa-IR"] body, html[lang="fa-IR"] #primary-nav ul {
     direction: rtl;
 }

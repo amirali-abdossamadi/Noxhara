@@ -9,10 +9,23 @@
     <canvas id="galaxy-canvas"></canvas>
     <header id="main-header" class="transparent-header">
         <div class="header-container">
-            <!-- Logo (Rightmost) -->
+            <!-- Logo or Site Name (Rightmost) -->
             <div class="site-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" class="logo-img">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link">
+                    <?php
+                    $use_logo = get_theme_mod( 'noxhara_use_logo', true );
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    if ( $use_logo && $custom_logo_id ) {
+                        $logo_width = get_theme_mod( 'noxhara_logo_width', 150 );
+                        $logo_height = get_theme_mod( 'noxhara_logo_height', 50 );
+                        $logo = wp_get_attachment_image_src( $custom_logo_id, 'noxhara-logo' );
+                        if ( $logo ) {
+                            echo '<img src="' . esc_url( $logo[0] ) . '" class="logo-img" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
+                        }
+                    } else {
+                        echo '<span class="site-title">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+                    }
+                    ?>
                 </a>
             </div>
             <!-- Navigation Menu (Center) -->
