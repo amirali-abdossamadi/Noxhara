@@ -5,18 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('galaxy-canvas');
     if (canvas && canvas.getContext) {
         const ctx = canvas.getContext('2d');
-
-        // Set canvas size
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Resize canvas on window resize
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
 
-        // Star class
         class Star {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -30,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
-                // Wrap around edges
                 if (this.x < 0) this.x = canvas.width;
                 if (this.x > canvas.width) this.x = 0;
                 if (this.y < 0) this.y = canvas.height;
@@ -46,13 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Create stars
         const stars = [];
         for (let i = 0; i < 200; i++) {
             stars.push(new Star());
         }
 
-        // Animation loop
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             stars.forEach(star => {
@@ -66,4 +58,18 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('Canvas not supported or element not found');
     }
+
+    // Header scroll animation
+    const header = document.getElementById('main-header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else if (scrollTop <= 50) {
+            header.classList.remove('scrolled');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 });
