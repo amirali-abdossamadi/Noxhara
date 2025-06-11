@@ -1,0 +1,17 @@
+# Ignore system files and temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+.idea/
+.vscode/
+node_modules/
+.sass-cache/
+*.zip
+*.sql
+*.env
+
+# Optional: ignore OS/editor backup files
+*~
+*.swp
+*.swo

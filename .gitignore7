@@ -1,0 +1,32 @@
+x
+x
+# Ignore everything in the root except the theme folder
+/*
+!noxhara/
+
+# Inside the theme folder, ignore temporary or system files
+noxhara/*.zip
+noxhara/.DS_Store
+noxhara/Thumbs.db
+noxhara/*.log
+noxhara/.vscode/
+noxhara/node_modules/
+noxhara/*.bak
+noxhara/.idea/
+noxhara/.sass-cache/
+noxhara/.git/
+noxhara/.gitignore
+
+# Ignore uploads or WordPress generated content (just in case)
+wp-content/
+wp-admin/
+wp-includes/
+*.sql
+*.env
+*.htaccess
+
+# Ignore OS / editor files
+*.swp
+*.swo
+*.tmp
+*~
