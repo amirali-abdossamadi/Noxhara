@@ -1,70 +1,52 @@
-دمت گرم امیرعلی عزیز! 👏 پروژه رو عالی پیش بردی، آفرین!
-الان برات یک فایل `README.md` کامل، حرفه‌ای، و مستند می‌نویسم که شامل موارد زیره:
-
-* معرفی قالب
-* ساختار پوشه‌ها (درختی)
-* قابلیت‌ها و ویژگی‌ها
-* نحوه نصب و استفاده
-* لایسنس
-* اطلاعات تماس
-
----
-
-### 📄 محتوای نهایی `README.md`
-
-```markdown
 # Noxhara — Modern & Modular WordPress Theme
 
 Noxhara is a modern, minimal, and highly customizable WordPress theme built for developers, agencies, and businesses. It offers full support for WooCommerce, custom dashboards, and user accounts, while maintaining high performance and clean code.
 
 ---
-
 ## 📁 Directory Structure
-
+‍‍‍‍‍‍```
+    noxhara/
+    ├── assets/                      # Static files (CSS, JS, images, fonts)
+    │   ├── css/
+    │   │   └── style.css            # Custom CSS styles
+    │   ├── js/
+    │   │   └── main.js              # Custom JavaScript
+    │   ├── images/
+    │   │   └── screenshot.png       # Theme preview image
+    │   └── fonts/                   # Custom fonts
+    ├── inc/                         # Custom PHP functions
+    │   ├── custom-functions.php     # General custom functions
+    │   ├── template-tags.php        # Template tag helpers
+    │   └── theme-hooks.php          # Custom hooks and actions
+    ├── templates/                   # Custom page templates
+    │   ├── page-about.php
+    │   ├── page-services.php
+    │   ├── page-contact.php
+    │   ├── page-login.php
+    │   ├── page-register.php
+    │   ├── page-account.php
+    │   ├── page-shop.php
+    │   └── page-dashboard.php
+    ├── woocommerce/                 # WooCommerce overrides and customization
+    ├── header.php                   # Theme header
+    ├── footer.php                   # Theme footer
+    ├── index.php                    # Main template fallback
+    ├── front-page.php               # Homepage template
+    ├── page.php                     # Default page template
+    ├── single.php                   # Single post template
+    ├── archive.php                  # Archive template
+    ├── search.php                   # Search results template
+    ├── 404.php                      # 404 error page
+    ├── sidebar.php                  # Sidebar template
+    ├── functions.php                # Main theme setup and registration
+    ├── style.css                    # Theme metadata and base styles
+    ├── screenshot.png               # Admin panel preview
+    ├── README.md                    # This file
+    ├── LICENSE                      # Theme license
+    ├── .gitignore                   # Git ignore file
+    └── languages/                   # Translations
+    └── noxhara-fa\_IR.mo/po      # Persian translations
 ```
-
-noxhara/
-├── assets/                      # Static files (CSS, JS, images, fonts)
-│   ├── css/
-│   │   └── style.css            # Custom CSS styles
-│   ├── js/
-│   │   └── main.js              # Custom JavaScript
-│   ├── images/
-│   │   └── screenshot.png       # Theme preview image
-│   └── fonts/                   # Custom fonts
-├── inc/                         # Custom PHP functions
-│   ├── custom-functions.php     # General custom functions
-│   ├── template-tags.php        # Template tag helpers
-│   └── theme-hooks.php          # Custom hooks and actions
-├── templates/                   # Custom page templates
-│   ├── page-about.php
-│   ├── page-services.php
-│   ├── page-contact.php
-│   ├── page-login.php
-│   ├── page-register.php
-│   ├── page-account.php
-│   ├── page-shop.php
-│   └── page-dashboard.php
-├── woocommerce/                 # WooCommerce overrides and customization
-├── header.php                   # Theme header
-├── footer.php                   # Theme footer
-├── index.php                    # Main template fallback
-├── front-page.php               # Homepage template
-├── page.php                     # Default page template
-├── single.php                   # Single post template
-├── archive.php                  # Archive template
-├── search.php                   # Search results template
-├── 404.php                      # 404 error page
-├── sidebar.php                  # Sidebar template
-├── functions.php                # Main theme setup and registration
-├── style.css                    # Theme metadata and base styles
-├── screenshot.png               # Admin panel preview
-├── README.md                    # This file
-├── LICENSE                      # Theme license
-├── .gitignore                   # Git ignore file
-└── languages/                   # Translations
-└── noxhara-fa\_IR.mo/po      # Persian translations
-
 ````
 
 ---
