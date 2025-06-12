@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.speedX = (Math.random() - 0.5) * 0.2;
                 this.speedY = (Math.random() - 0.5) * 0.2;
                 this.opacity = Math.random() * 0.5 + 0.3;
-                this.isGold = Math.random() < 0.3; // 30% chance for gold particles
+                this.isGold = Math.random() < 0.3;
             }
 
             update() {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const particles = [];
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 150; i++) {
             particles.push(new Particle());
         }
 
@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         animate();
-    } else {
-        console.error('Canvas not supported or element not found');
     }
 
     // Header scroll and admin bar handling
@@ -67,12 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let lastScrollTop = 0;
 
         function adjustHeaderOffset() {
-            if (adminBar) {
-                const adminBarHeight = adminBar.offsetHeight;
-                header.style.top = `${adminBarHeight}px`;
-            } else {
-                header.style.top = '0';
-            }
+            header.style.top = adminBar ? `${adminBar.offsetHeight}px` : '0';
         }
 
         adjustHeaderOffset();
@@ -87,8 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
-    } else {
-        console.error('Header element not found');
     }
 
     // Hero section animations

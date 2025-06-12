@@ -1,9 +1,9 @@
 <?php
 // Enqueue styles and scripts
 function noxhara_enqueue_scripts() {
-    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri(), array(), '1.0.6' );
-    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.6' );
-    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.6', true );
+    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri(), array(), '1.0.7' );
+    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.7' );
+    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.7', true );
 
     // Inline CSS for logo sizing
     $logo_width = get_theme_mod( 'noxhara_logo_width', 150 );
@@ -42,7 +42,7 @@ add_action( 'after_setup_theme', 'noxhara_setup' );
 // Add RTL support
 add_action( 'init', function() {
     if ( is_rtl() ) {
-        wp_enqueue_style( 'noxhara-rtl', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.6' );
+        wp_enqueue_style( 'noxhara-rtl', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.7' );
     }
 } );
 
@@ -100,6 +100,12 @@ function noxhara_sanitize_checkbox( $checked ) {
 }
 
 // Include custom function files
-require get_template_directory() . '/inc/custom-functions.php';
-require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/theme-hooks.php';
+if ( file_exists( get_template_directory() . '/inc/custom-functions.php' ) ) {
+    require get_template_directory() . '/inc/custom-functions.php';
+}
+if ( file_exists( get_template_directory() . '/inc/template-tags.php' ) ) {
+    require get_template_directory() . '/inc/template-tags.php';
+}
+if ( file_exists( get_template_directory() . '/inc/theme-hooks.php' ) ) {
+    require get_template_directory() . '/inc/theme-hooks.php';
+}

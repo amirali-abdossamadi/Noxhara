@@ -3,7 +3,8 @@
 Template Name: Homepage
 Template Post Type: page
 */
-get_header(); ?>
+get_header();
+?>
 <div class="hero-section">
     <div class="hero-content">
         <h1 class="hero-title animate"><?php _e( 'Welcome to the Future', 'noxhara' ); ?></h1>
@@ -13,13 +14,16 @@ get_header(); ?>
 </div>
 <main class="container">
     <?php
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
             the_content();
-        endwhile;
-    else :
+        }
+    } else {
         echo '<p>' . esc_html__( 'No content found.', 'noxhara' ) . '</p>';
-    endif;
+    }
     ?>
 </main>
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>
