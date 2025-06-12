@@ -1,9 +1,9 @@
 <?php
 // Enqueue styles and scripts
 function noxhara_enqueue_scripts() {
-    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri(), array(), '1.0.5' );
-    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.5' );
-    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.5', true );
+    wp_enqueue_style( 'noxhara-style', get_stylesheet_uri(), array(), '1.0.6' );
+    wp_enqueue_style( 'noxhara-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.6' );
+    wp_enqueue_script( 'noxhara-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.6', true );
 
     // Inline CSS for logo sizing
     $logo_width = get_theme_mod( 'noxhara_logo_width', 150 );
@@ -35,15 +35,14 @@ function noxhara_setup() {
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'noxhara' ),
     ) );
-    // Register custom image size for logo
-    add_image_size( 'noxhara-logo', 300, 100, false ); // Soft crop for flexibility
+    add_image_size( 'noxhara-logo', 300, 100, false );
 }
 add_action( 'after_setup_theme', 'noxhara_setup' );
 
 // Add RTL support
 add_action( 'init', function() {
     if ( is_rtl() ) {
-        wp_enqueue_style( 'noxhara-rtl', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.5' );
+        wp_enqueue_style( 'noxhara-rtl', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.6' );
     }
 } );
 

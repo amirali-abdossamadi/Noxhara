@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Noxhara\n"
-"POT-Creation-Date: 2025-06-11 19:00+0400\n"
-"PO-Revision-Date: 2025-06-11 19:00+0400\n"
+"POT-Creation-Date: 2025-06-12 14:00+0400\n"
+"PO-Revision-Date: 2025-06-12 14:00+0400\n"
 "Last-Translator: Your Name\n"
 "Language-Team: Persian\n"
 "Language: fa_IR\n"
@@ -37,3 +37,12 @@ msgstr "عرض لوگو (پیکسل)"
 
 msgid "Logo Height (px)"
 msgstr "ارتفاع لوگو (پیکسل)"
+
+msgid "Welcome to the Future"
+msgstr "به آینده خوش آمدید"
+
+msgid "Experience a Modern and Luxurious Journey with Noxhara"
+msgstr "تجربه‌ای مدرن و لوکس با ناکسارا"
+
+msgid "Explore Services"
+msgstr "مشاهده خدمات"
